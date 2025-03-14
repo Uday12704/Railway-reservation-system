@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="assets/style2.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <div class="overlay" id="overlay">
+            <h3 id="login">Welcome Back!</h3>
+            <h2 id="sign-up">Create Account!</h2>
+        </div>
+        <div class="form-wrapper">
+            <div class="form-container" id="login-form">
+                <h1>Login</h1>
+                <form>
+                    <input type="text" placeholder="Username" required class="input-field"><br>
+                    <input type="password" placeholder="Password" required class="input-field"><br>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="register-link">Register here</a></p>
+            </div>
+            <div class="form-container" id="register-form">
+                <h1>Sign up</h1>
+                <form>
+                    <input type="text" placeholder="Username" required class="input-field"><br>
+                    <input type="email" placeholder="Email" required class="input-field"><br>
+                    <input type="password" placeholder="Password" required class="input-field"><br>
+                    <input type="date" class="twoip" placeholder="DD-MM-YYYY" required class="input-field">
+                    <input type="tel" class="twoip" placeholder="Phone Number" required>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+                <p>Already have an account? <a href="#" id="login-link">Login here</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.getElementById('register-link').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('overlay').style.left = '0';
+    document.getElementById('login-form').classList.add('hidden');
+    document.getElementById('register-form').classList.remove('hidden');
+    document.getElementById('sign-up').classList.remove('hidden');
+    document.getElementById('login').classList.add('hidden');
+});
+document.getElementById('sign-up').classList.add('hidden');
+document.getElementById('overlay').style.left = '50%';
+document.getElementById('register-form').classList.add('hidden');
+
+document.getElementById('login-link').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('overlay').style.left = '50%';
+    document.getElementById('register-form').classList.add('hidden');
+    document.getElementById('login-form').classList.remove('hidden');
+    document.getElementById('login').classList.remove('hidden');
+    document.getElementById('sign-up').classList.add('hidden');
+});
+    </script>
+</body>
+</html>
